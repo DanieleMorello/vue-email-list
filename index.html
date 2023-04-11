@@ -19,10 +19,14 @@
   <div id="app">
 
     <h1>{{ title }}</h1>
-
+    
     <ul v-if="allEmailsGenerated">
+      
+      <template v-for="email in emails">
 
-      <li v-for="email in emails">{{ email }}</li>
+        <li>{{ email }}</li>
+        
+      </template>
 
     </ul>
 
