@@ -20,11 +20,13 @@
 
     <h1>{{ title }}</h1>
 
-    <ul>
+    <ul v-if="allEmailsGenerated">
 
       <li v-for="email in emails">{{ email }}</li>
 
     </ul>
+
+    <p v-else>Loading...</p>
 
   </div>
 

@@ -7,6 +7,7 @@ createApp({
       url: "https://flynn.boolean.careers/exercises/api/random/mail",
       emails: [],
       emailsGenerated: 10,
+      allEmailsGenerated: false,
     }
   },
   mounted() {
@@ -15,6 +16,9 @@ createApp({
       .get(this.url)
       .then(response => {
       this.emails.push(response.data.response);
+      if (this.emails.length === this.emailsGenerated) {
+        this.allEmailsGenerated = true;
+      }
       })
     }
   },
