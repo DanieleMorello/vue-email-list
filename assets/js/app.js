@@ -11,10 +11,11 @@ createApp({
   },
   mounted() {
     for (let i = 0; i < this.emailsGenerated; i++) {
-      axios.get(this.url)
-        .then(response => {
-          this.emails.push(response.data.response);
-        })
+      axios
+      .get(this.url)
+      .then(response => {
+      this.emails.push(response.data.response);
+      })
     }
   },
 }).mount('#app')
