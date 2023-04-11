@@ -24,15 +24,19 @@
   
   <div id="app">
 
-    <h1>{{ title }}</h1>
+    <header>
+
+      <h1>Generatore di email random</h1>
+
+    </header>
+
+    
+
+    <h2>{{ title }}</h1>
     
     <ul v-if="allEmailsGenerated">
       
-      <template v-for="email in emails">
-
-        <li>{{ email }}</li>
-
-      </template>
+      <li v-for="email in emails">{{ email }}</li>
 
     </ul>
 

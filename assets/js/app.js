@@ -10,16 +10,20 @@ createApp({
       allEmailsGenerated: false,
     }
   },
-  mounted() {
-    for (let i = 0; i < this.emailsGenerated; i++) {
-      axios
-      .get(this.url)
-      .then(response => {
-      this.emails.push(response.data.response);
-      if (this.emails.length === this.emailsGenerated) {
-        this.allEmailsGenerated = true;
+  methods: {
+    generateEmails() {
+      for (let i = 0; i < this.emailsGenerated; i++) {
+        axios.get(this.url)
+          .then(response => {
+            this.emails.push(response.data.response);
+            if (this.emails.length === this.emailsGenerated) {
+              this.allEmailsGenerated = true;
+            }
+          });
       }
-      })
-    }
+    },
+  },
+  mounted() {
+    this.generateEmails();
   },
 }).mount('#app')
