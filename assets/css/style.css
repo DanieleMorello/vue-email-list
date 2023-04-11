@@ -1,3 +1,45 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1rem;
+  background-color: #051930;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  box-shadow: 0 0 5px #808080;
+}
+
+h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 80%;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > div i {
+  color: #3498db;
+}
+
+h2,
+ul {
+  padding: .5rem;
+}
+
 .spinner {
   color: #3498db; 
   animation: spin 1s ease-in-out infinite;
@@ -5,4 +47,18 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: gray;
+  width: 100%;
 }

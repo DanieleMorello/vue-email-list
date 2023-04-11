@@ -12,6 +12,11 @@
 
   <title>Email list</title>
 
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
   <!-- FONTAWESOME CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -30,19 +35,30 @@
 
     </header>
 
-    
+    <main>
 
-    <h2>{{ title }}</h1>
+      <div class="container">
+        
+        <div><i class="fa-solid fa-envelope"></i> {{ title }}</div>
     
-    <ul v-if="allEmailsGenerated">
+        <ul v-if="allEmailsGenerated">
+              
+          <li v-for="email in emails">{{ email }}</li>
+        
+        </ul>
+            
+        <i v-else class="spinner fa-solid fa-spinner"></i>
+
+      </div>
       
-      <li v-for="email in emails">{{ email }}</li>
 
-    </ul>
+    </main>
 
-    <!-- <p v-else>Loading...</p> -->
+    <footer>
 
-    <i v-else class="spinner fa-solid fa-spinner"></i>
+      <p>Copyright &copy; <time>2023</time> - Daniele Morello Classe 91 Boolean</p>
+
+    </footer>
 
   </div>
 
